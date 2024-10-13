@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EQUILIBRIA</title>
+    <link rel="icon" type="image/png" href="assets/images/equilibria.svg">
+    <!-- css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <style>
+        /* Keyframe for bounce animation */
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Button styling */
+        .chat-button {
+            position: fixed;
+            bottom: 40px;
+            right: 20px;
+            background-color: #E1306C; /* Instagram's pink color */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            z-index: 9999; /* Ensures the button stays on top of other content */
+            opacity: 1; /* Make sure the button is fully visible */
+            transform: translateY(0); /* Ensure button starts in the right position */
+        }
+
+        /* Bounce effect on hover */
+        .chat-button:hover {
+            background-color: #C13584; /* Darker Instagram pink on hover */
+            animation: bounce 0.5s; /* Bounce animation */
+        }
+
+        /* Chat button icon */
+        .chat-button img {
+            vertical-align: middle;
+            margin-right: 10px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chat Button -->
+    <button class="chat-button" onclick="window.open('https://ig.me/m/evogen_sctce', '_blank')">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Icon">
+        Leave a Message
+    </button>
+
+    <script>
+        // Ensure the button stays visible even when scrolling
+        window.addEventListener('scroll', function() {
+            const button = document.querySelector('.chat-button');
+            button.style.display = 'block'; // Ensures the button stays visible
+        });
+    </script>
+
+</body>
+</head>
+
+<body data-spy="scroll" data-target="#site-nav">
+    <nav id="site-nav" class="navbar navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- logo -->
+                <div class="site-branding">
+                    <a class="logo" href="index.html">
+                        <!-- logo image  -->
+                        <img src="assets/images/eq2.png" alt="Logo" height="75px">
+                        <img src="assets/images/equilibria.svg" alt="Logo" height="75px">
+                        EQUILIBRIA
+                    </a>
+                </div>
+
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-items" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div><!-- /.navbar-header -->
+
+            <div class="collapse navbar-collapse" id="navbar-items">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- navigation menu -->
+                    <li class="active"><a data-scroll href="#about"><h5>About</h5></a></li>           
+                      
+                    <li><a data-scroll href="#organizing-committee"><h5>Committee</h5></a></li>  
+                    <li><a data-scroll href="#timeline"><h5>Timeline</h5></a></li> 
+                    <li><a data-scroll href="#fees"><h5>Fees</h5></a></li>
+                    <li><a data-scroll href="#guidelines"><h5>Guidelines</h5></a></li>                                                    
+                    <li><a data-scroll href="#faq"><h5>FAQ</h5></a></li>
+                    <li><a data-scroll href="#schedule"><h5>Schedule</h5></a></li>
+                    <li><a data-scroll href="#location"><h5>Contact</h5></a></li>
+                </ul>
+            </div>
+        </div><!-- /.container -->
+    </nav>
+
+    <header id="site-header" class="site-header valign-center"> 
+        <div class="intro">
+            <h1><span style="font-size: 48px;">Equilibria 2025</span></h1>
+            <h3>24 - 25 January 2025 | SCTCE Trivandrum</h3>
+            <h3>"CATALYZING INNOVATIONS THROUGH CROSS-DISCIPLINARY RESEARCH"</h3>
+            <br>
+            <div class ="buttons">
+                <a class="btn btn-white b1" href="https://forms.gle/YkTGGzXBZ7WygkwY6" target="_blank">Submit Abstract</a>
+                <a class="btn btn-white b2" href="https://forms.gle/jkYC8bpDHchZWyCx9" target="_blank">Register Now</a>
+            </div>
+            <div class="container1">
+                <div id="countdown">
+                  <ul>
+                    <li><span id="days"></span>days</li>
+                    <li><span id="hours"></span>Hours</li>
+                    <li><span id="minutes"></span>Minutes</li>
+                    <li><span id="seconds"></span>Seconds</li>
+                  </ul>
+                </div>
+              </div>
+            <div class="marquee">
+                <span><h4>Important Dates:&nbsp;&nbsp;&nbsp;Abstract submission deadline : 30th NOVEMBER 2024&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Acceptance and notifications : 20th  DECEMBER 2024&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Registration deadline : 10th JANUARY 2025  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; </h4> </span>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="section-title">About Equilibria</h3>
+                    <p>Equilibria is a national-level symposium, hosted
+                        annually by the Department of Biotechnology and
+                        Biochemical Engineering (BT & BCE) at Sree chitra thirunal college of engineering, Trivandrum
+                        under the banner of EVOGEN, which
+                        encompasses both the staff and student bodies of
+                        Biotechnology department. The symposium
+                        features paper and poster presentations, talk sessions
+                        and workshops.
+                        Equilibria facilitates the exchange of ideas and
+                        expertise among intellectuals, researchers, and
+                        students in the fields of biotechnology and
+                        biochemical engineering.</p>
+                    <figure>
+                        <!-- <img alt="About Us" class="img-responsive" src="assets/images/about-us.jpg"> -->
+                    </figure>
+                </div><!-- /.col-sm-6 -->
+
+                <div class="col-sm-6">
+                    <h3 class="section-title">Our Goals</h3>
+                    <p>The primary goal of this conference is to foster collaboration and knowledge exchange among professionals working in various domains of biotechnology. Through keynote speeches, panel discussions, and interactive sessions, attendees will gain insights into the latest research trends and technological innovations in cross-disciplinary fields of biotechnology .</p>
+                    <!-- <ul>
+                        <li>Explore cutting-edge research in various fields</li>
+                        <li>Network with leading experts in the field</li>
+                        <li>Discuss practical challenges and solutions</li>
+                        <li>Gain inspiration for future research endeavors</li>
+                    </ul> -->
+                </div><!-- /.col-sm-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section>
+
+    <section id="facts" class="section bg-image-1 facts text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+
+                    <i class="ion-ios-calendar"></i>
+                    <h3>2025<br>January 24 - 25</h3>
+                
+                </div>
+                <div class="col-sm-3">
+
+                    <i class="ion-ios-location"></i>
+                    <h3>SCTCE <br>Trivandrum<br>Kerala</h3>
+                
+                </div>
+                <div class="col-sm-3">
+
+                    <i class="ion-pricetags"></i>
+                    <h3>50<br>Tickets</h3>
+                
+                </div>
+
+            </div><!-- row -->
+        </div><!-- container -->
+    </section>
+
+    <!-- Organizing Committee Section -->
+    <section id="organizing-committee">
+        <div class="container">
+            <h2>ORGANIZING COMMITTEE</h2>
+            <div class="committee-list">
+                <div class="committee-member card">
+                    <h4 title="Prof. (Dr.) C. Sathish Kumar">Prof. (Dr.) C. Sathish Kumar</h4>
+                    <p>Chairperson, Principal SCTCE</p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. (Dr.) K. B. Radhakrishnan">Prof. (Dr.) K. B. Radhakrishnan</h4>
+                    <p>Co-Chairperson, President EVOGEN</p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Dr. Ani Lawrance">Dr. Ani Lawrance</h4>
+                    <p> Vice-President EVOGEN</p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. Baji Krishnan">Prof. Baji Krishnan</h4>
+                    <p>Staff Secretary EVOGEN</p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Dr. Rohini Samadarsi">Dr. Rohini Samadarsi</h4>
+                    <p></p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. Gayathri V">Prof. Gayathri V</h4>
+                    <p></p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. Biju Jacob">Prof. Biju Jacob</h4>
+                    <p></p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. Susmitha Kumari S">Prof. Susmitha Kumari S</h4>
+                    <p></p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Prof. Rubeena S">Prof. Rubeena S</h4>
+                    <p></p>
+                </div>
+                <div class="committee-member card">
+                    <h4 title="Dr. Uma Suganya K.S">Dr. Uma Suganya K.S</h4>
+                    <p></p>
+                </div>
+                
+                <!-- Add more members as needed -->
+            </div>
+        </div>
+    </section>
+<div class="topics-section">
+    <h2>CONFERENCE TRACK TOPICS</h2>
+    <ul class="topics-list">
+        <li>Nanotechnology</li>
+        <li>Separation Processes</li>
+        <li>Bioprocess Engineering and Fluid Dynamics</li>
+        <li>Renewable and Alternative Energy</li>
+        <li>Safety and Health</li>
+        <li>Environmental Biotechnology and Waste Management</li>
+        <li>Instrumentation and Process Control</li>
+        <li>Food Technology</li>
+        <li>Material Science</li>
+        <li>Energy Storage and Green Chemistry</li>
+        <li>Catalysis and Reaction Engineering</li>
+        <li>Application of Artificial Intelligence and Neural Networks</li>
+        <li>Modelling and Simulation</li>
+        <li>Composite and Smart Materials</li>
+        <li>Agriculture and Plant Biotechnology</li>
+        <li>Immunology</li>
+    </ul>
+</div>
+
+    <!-- <section id="speakers" class="section speakers">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">National Advisory Committee</h3>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block"  src="assets/images/speakers/1.svg">
+                        </figure>
+
+                        <h4>Name</h4>
+
+                        <p>Designation</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>   
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block"  src="assets/images/speakers/1.svg">
+                        </figure>
+
+                        <h4>Name</h4>
+
+                        <p>Designation</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            
+                        </ul>
+
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="speaker">
+
+                        <figure>
+                            <img alt="" class="img-responsive center-block"  src="assets/images/speakers/1.svg">
+                        </figure>
+
+                        <h4>Name</h4>
+
+                        <p>Designation</p>
+
+                        <ul class="social-block">
+                            <li><a href=""><i class="ion-social-twitter"></i></a></li>
+                            <li><a href=""><i class="ion-social-facebook"></i></a></li>
+                            <li><a href=""><i class="ion-social-linkedin-outline"></i></a></li>
+                            
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+    </section> -->
+
+    <!-- <section id="registration" class="section registration">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Registration &amp; Pricing</h3>
+                </div>
+            </div>
+                
+            <form action="#" id="registration-form">
+                <div class="row">
+                    <div class="col-md-12" id="registration-msg" style="display:none;">
+                        <div class="alert"></div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="First Name" id="fname" name="fname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Last Name" id="lname" name="lname" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Phone" id="cell" name="cell" required>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Address" id="address" name="address" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Zip Code" id="zip" name="zip" required>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="city" id="city" required>
+                                <option readonly>City</option>
+                                <option>City Name 1</option>
+                                <option>City Name 2</option>
+                                <option>City Name 3</option>
+                                <option>City Name 4</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <select class="form-control" name="program" id="program" required>
+                                <option readonly>Select Your Program</option>
+                                <option>Program Name 1</option>
+                                <option>Program Name 2</option>
+                                <option>Program Name 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt20">
+                    <button type="submit" class="btn btn-black" id="registration-submit-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section> -->
+<!-- 
+    <section id="contribution" class="section bg-image-2 contribution">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="text-uppercase mt0 font-400">Submit Your Contribution Work</h3>
+                    
+                    <p>You've inspired new consumer, racked up click-thru's, blown-up brand awareness. We can't give you back the weekends you worked, or erase the pain of being forced to make the logo bigger. But if you submit your best work.</p>
+
+                    <a class="btn btn-white" href="#">Submit</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section id="timeline">
+        <div class="timeline-container">
+          <h2>Conference Timeline</h2>
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <p><h4>30th November 2024</h4></p>
+            </div>
+            <div class="timeline-content">
+              <h3>Abstract Submission Deadline</h3>
+              <p>Last date to submit your research abstracts.</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <p><h4>20th December 2024</h4></p>
+            </div>
+            <div class="timeline-content">
+              <h3>Notification of Acceptance</h3>
+              <p>Authors will be notified about the acceptance of their papers.</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <p><h4>10th January 2025</h4></p>
+            </div>
+            <div class="timeline-content">
+              <h3>Conference Registration</h3>
+              <p>Final date to register for the conference.</p>
+            </div>
+          </div>
+      
+          <div class="timeline-item">
+            <div class="timeline-date">
+              <p><h4>24th & 25th January 2025</h4></p>
+            </div>
+            <div class="timeline-content">
+              <h3>Conference Day</h3>
+              <p>Join us for the main event packed with keynote speeches, technical sessions, and opportunities.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    <section id ="fees" class="section schedule">
+        <div class="container">
+            <h3 class="section-title">Registration Fees</h3>
+            <table >
+                <thead>
+                    <th><h5>CATEGORIES</h5></th>
+                    <th></th>
+                    <th><h5>FEES</h5></th>  
+                </thead>
+                <tbody>                
+                    <tr>
+                        <td><h5>Industry Professionals</h5></td>
+                        <td></td> 
+                        <td><h5>₹1200</h5></td> 
+                    </tr>
+                    <tr>
+                        <td><h5>Academicians</h5></td>
+                        <td></td>
+                        <td><h5>₹1000</h5></td> 
+                    </tr>
+                    <tr>
+                        <td><h5>Postgraduate Students</h5></td>
+                        <td></td>
+                        <td><h5>₹700</h5></td>
+                    </tr>
+                    <tr>
+                        <td><h5>Undergraduate Students</h5></td>
+                        <td></td>
+                        <td><h5>₹500</h5></td>
+                    </tr>
+                    
+            </tbody>
+
+            </table>
+            <br>
+            <h3 class="section-title">Participation Fees</h3>
+            <p><h5>₹300</h5></p>
+            <a  href="will_be_available_soon" target="_blank"><button class="btn-download">Download Brochure</button></a>
+
+        </div>
+
+         <section id="guidelines" class="section about">
+            <div class="container">
+                <h3 class="section-title">Guidelines</h3>
+                <div class="row">
+                    
+    
+                    <div class="col-sm-6">
+                        <h4>Abstract Template</h4>
+                        <ul>
+                            <div class="text-left" style="width: 100%;">
+                                <a href="https://docs.google.com/document/d/1AafqCpu9zKhQFh56e_Ydx9RaYwg8MLTw/edit?usp=sharing&ouid=108516683673558514902&rtpof=true&sd=true" target="_blank" class="btn btn-primary pdf-btn" style="background-color: #0b5688; color: #f1d276;">Abstract Format (Doc)</a>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <h4>Oral Presentation Template</h4>
+                        <ul>
+                            <div class="text-left" style="width: 100%;">
+                                <a href="https://docs.google.com/presentation/d/1QbWE9UXReGITxIGvZ2U_BrhnR7hMU4e6/edit?usp=sharing&ouid=108516683673558514902&rtpof=true&sd=true" target="_blank" class="btn btn-primary pdf-btn" style="background-color: #0b5688; color: #f1d276;">Oral Presentation Format (pptx)</a>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-sm-6">
+                        <h4>Poster Presentation Template</h4>
+                        <ul>
+                            <div class="text-left" style="width: 100%;">
+                                <a href="" target="_blank" class="btn btn-primary pdf-btn" style="background-color: #0b5688; color: #f1d276;">Poster Presentation Format (pptx)</a>
+                            </div>
+                        </ul>
+                    </div>
+                    
+                
+            </div>
+        </section>
+    
+    
+
+        
+    
+    </section>
+    <section id="faq" class="section faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event FAQs</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> Who can participate in the conference ?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                    <p>The symposium is open to undergraduate and postgraduate students, researchers, academicians, and professionals related to the field of biotechnology and allied engineering branches.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Will there be any workshops or competitions during the symposium?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body">Yes, we will be organizing workshops, competitions, and other interactive sessions. Details about these events will be updated on our website soon.
+                                </div>
+                            </div>
+                        </div>
+  
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How do i get to the conference venue?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">Directions and transportation options are available in the "Venue Information" section of the website. We also recommend using [Local Transport Service] for convenient travel.
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Can I register onsite?
+                                    </a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                <div class="panel-body"> Yes, on-site registration is available for participation only. However, please note that on-site registration does not include the option to present. If you wish to attend as a participant, you can register upon arrival, but all presentation slots must be secured in advance.
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFive">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">What are the accomodation options available near the conference venue?
+
+                                    </a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                <div class="panel-body">The accommodation for the delegates can be arranged in hotels  and  hostels subject to the availability of the same on request and on payment basis Please contact the organizing committee for more details and rates.
+
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingSix">
+                                <h4 class="panel-title">
+                                    <a class="faq-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix"> How can I contact the organizing committee for further inquiries?</a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                                <div class="panel-body">You can contact us through 
+                                    <ul>
+                                        <li><a class = "link" href="tel:9496371078">9496371078</a> (Prof. Baji Krishnan—Staff Secretary)</li>
+                                        <li><a class = "link" href="tel:9526642343">9526642343</a> (Rohith Krishna—Representative)</li>
+                                        <li><a class = "link" href="tel:8592809513">8592809513</a> (Naima Abdul Nazar—Program Coordinator)</li>
+                                        <li><a class = "link" href="mailto:deptbtbce@gmail.com">deptbtbce@gmail.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+    </section>
+    
+    
+    <section id="schedule" class="section schedule">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event Schedule</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <!-- <time datetime="09:00">09:00 am</time> - <time datetime="22:00">10:00 am</time> -->
+                        </div>
+                        <h3>Coming Soon</h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <!-- <time datetime="10:00">10:00 am</time> - <time datetime="22:00">10:00 am</time> -->
+                        </div>
+                        <h3>Stay</h3>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="schedule-box">
+                        <div class="time">
+                            <!-- <time datetime="10:00">10:00 am</time> - <time datetime="22:00">10:00 am</time> -->
+                        </div>
+                        <h3>Tuned</h3>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+    </section>
+<!-- 
+    <section id="partner" class="section partner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Event Partner</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-1"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-2"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-3"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-4"></a>
+                </div>
+            </div>
+
+             <div class="row">
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-5"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-6"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-7"></a>
+                </div>
+                <div class="col-sm-3">
+                    <a class="partner-box partner-box-8"></a>
+                </div>
+            </div>    
+    </section> -->
+
+
+
+    <section id="photos" class="section photos">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 class="section-title">Photos</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <ul class="grid">
+                        
+                        <li class="grid-item grid-item-sm-6">
+                            <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-1.jpg">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-2.jpg">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-3.jpg">
+                        </li>
+                    
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-7.jpg">
+                        </li>
+
+                        <li class="grid-item grid-item-sm-3">
+                            <img alt="" class="img-responsive center-block" src="assets/images/photos/photos-5.jpg">
+                        </li>
+
+                    </ul>
+                </div>
+            </div>            
+        </div>
+    </section> 
+
+    <section id="location" class="section location">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3 class="section-title">Event Location</h3>
+                    <address>
+                        <p>Sree Chitra Thirunal College Of Engineering<br> Papanamcode<br> 695018<br><br> Phone: 
+                            <a class = "link" href="tel:9496371078">9496371078</a><br>
+                            <a class = "link" href="tel:9526642343">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9526642343</a><br> Email: &nbsp;<a class = "link" href="mailto:deptbtbce@gmail.com">deptbtbce@gmail.com</a></p>
+                    </address>
+                </div>
+                <div class="col-sm-9">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.2966108084042!2d76.9768534739544!3d8.47051109748323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05baee56e6b99b%3A0x4ce024c88eb0ddcb!2sSree%20Chitra%20Thirunal%20College%20of%20Engineering%2C%20Thiruvananthapuram!5e0!3m2!1sen!2sin!4v1709993570315!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="assets/images/footer.png" height="54px">
+                    <ul class="social-block">
+                        <li><a href="https://www.instagram.com/evogen_sctce?igsh=bmN4enk0ZmVzbnA3" target="_blank"><i class="ion-social-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/evogen/" target="_blank"><i class="ion-social-linkedin-outline"></i></a></li>
+                        <li><a href="https://m.facebook.com/EvogenSCTCE" target="_blank"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="https://youtube.com/@evogen8001?si=Kn9Xgd5Mle_AsD88" target="_blank"><i class="ion-social-youtube"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- script -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/smooth-scroll/dist/js/smooth-scroll.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
